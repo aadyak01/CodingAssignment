@@ -1,8 +1,11 @@
 package com.uxpsystems.assignment.entity;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 
 @Entity
+@org.hibernate.annotations.Cache(usage= CacheConcurrencyStrategy.READ_WRITE)
 @Table(name = "User", uniqueConstraints = @UniqueConstraint(columnNames = {"id","userName"}))
 public class User {
 
